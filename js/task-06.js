@@ -3,11 +3,12 @@ const inputRef = document.querySelector("#validation-input");
 const inputLength = inputRef.getAttribute("data-length");
 // console.log(inputLength);
 function verifLengthName(event) {
-  if (event.currentTarget.value.length >= inputLength) {
+  if (event.currentTarget.value.length == inputLength) {
     inputRef.classList.add("valid");
     inputRef.classList.remove("invalid");
   } else {
     inputRef.classList.add("invalid");
+    inputRef.classList.remove("valid");
   }
 }
 inputRef.addEventListener("blur", verifLengthName);
